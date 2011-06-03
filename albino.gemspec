@@ -47,6 +47,7 @@ Gem::Specification.new do |s|
     albino.gemspec
     lib/albino.rb
     lib/albino/multi.rb
+    lib/albino/process.rb    
     test/albino_test.rb
     test/multi_albino_test.rb
     vendor/multipygmentize
