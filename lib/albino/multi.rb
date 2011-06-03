@@ -23,8 +23,6 @@ class Albino
   #
   # To see all lexers and formatters available, run `pygmentize -L`.
   class Multi
-    include POSIX::Spawn
-
     class << self
       attr_accessor :bin, :timeout_threshold
     end
@@ -83,7 +81,7 @@ class Albino
         memo << code << SEPARATOR
       end.join("")
 
-      child  = Child.new(self.class.bin, options)
+      child  = Process.new(self.class.bin, env = {}, options)
       pieces = child.out.split(SEPARATOR).each do |code|
         # markdown requires block elements on their own line
         code.sub!(%r{</pre></div>\Z}, "</pre>\n</div>")
