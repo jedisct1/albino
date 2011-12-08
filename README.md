@@ -4,6 +4,8 @@ This project is an extraction from GitHub.
 
 For this and other extractions, see [http://github.com/github]()
 
+**Note**: This library is deprecated in favor of [pygments.rb](https://github.com/tmm1/pygments.rb).
+
 ## Installation
 
     sudo easy_install pygments
@@ -25,5 +27,5 @@ For this and other extractions, see [http://github.com/github]()
 ### Multi
 
     require 'albino/multi'
-    ruby, python = Albino::Multi.colorize([ ['1+2',:ruby], ['1-2',:python] ])
+    ruby, python = Albino::Multi.colorize([ [:ruby,'1+2'], [:python,'1-2'] ])
 
